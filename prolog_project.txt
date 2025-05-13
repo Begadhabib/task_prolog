@@ -1,0 +1,54 @@
+:- style_check(-singleton).
+
+% ---------- 1D / 2D Shapes ----------
+shape(point(X, Y)).             % 1D
+shape(line(X1, Y1, X2, Y2)).    % 1D
+shape(circle(Radius)).          % 2D
+shape(square(Side)).            % 2D
+shape(rectangle(Length, Width)).% 2D
+shape(triangle(A, B, C)).       % 2D
+
+% ---------- 3D Shapes ----------
+shape(cube(Side)).              % 3D
+shape(cuboid(L, W, H)).         % 3D
+shape(sphere(Radius)).          % 3D
+shape(cylinder(Radius, Height)).% 3D
+
+% ---------- Valid Shape Check ----------
+valid_shape(Shape) :- shape(Shape), shape_conditions(Shape).
+
+% ---------- Conditions ----------
+shape_conditions(point(X, Y)) :-
+    number(X), number(Y).
+
+shape_conditions(line(X1, Y1, X2, Y2)) :-
+    number(X1), number(Y1), number(X2), number(Y2),
+    (X1 \= X2; Y1 \= Y2).
+
+shape_conditions(circle(R)) :-
+    number(R), R > 0.
+
+shape_conditions(square(S)) :-
+    number(S), S > 0.
+
+shape_conditions(rectangle(L, W)) :-
+    number(L), number(W), L > 0, W > 0, L \= W.
+
+shape_conditions(triangle(A, B, C)) :-
+    number(A), number(B), number(C),
+    A > 0, B > 0, C > 0,
+    A + B > C, A + C > B, B + C > A.
+
+shape_conditions(cube(S)) :-
+    number(S), S > 0.
+
+shape_conditions(cuboid(L, W, H)) :-
+    number(L), number(W), number(H),
+    L > 0, W > 0, H > 0.
+
+shape_conditions(sphere(R)) :-
+    number(R), R > 0.
+
+shape_conditions(cylinder(R, H)) :-
+    number(R), number(H),
+    R > 0, H > 0.

@@ -1,0 +1,16 @@
+#five valid quaries 
+valid_shape(circle(5)).
+valid_shape(square(4)).
+valid_shape(point(1, 2)).
+valid_shape(cylinder(3, 10)).
+valid_shape(triangle(3, 4, 5)).
+
+
+#five invalid quaries
+
+valid_shape(circle(-2)).         % نصف القطر بالسالب
+valid_shape(square(0)).          % ضلع = 0
+valid_shape(rectangle(5, 5)).    % لازم L ≠ W
+valid_shape(triangle(1, 2, 10)). % شرط المثلث مش متحقق
+valid_shape(line(1, 1, 1, 1)).   % خط طوله صفر
+  
