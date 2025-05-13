@@ -93,7 +93,6 @@ Happy coding with logic! 🧮
 
 ```
 
----
 
-Let me know if you’d like help creating a `LICENSE` file or example `shapes.pl` file for GitHub.
+
 ```
