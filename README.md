@@ -1,6 +1,4 @@
-Here’s a clean and professional `README.md` file for your Prolog shape validation project, suitable for GitHub:
 
----
 
 ````markdown
 # Shape Validator in Prolog
